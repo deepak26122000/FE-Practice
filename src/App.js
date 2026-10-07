@@ -64,13 +64,21 @@ class CustomerApp extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  { this.state.customers.map(customer => 
-                    <tr key={customer.id}>
-                      <td><a href="#" onClick={() => this.getCustomer(customer)}>{customer.name}</a></td>
-                      <td>{customer.employees}</td>
-                      <td>{customer.size}</td>
-                    </tr>  
-                  )}
+                    {this.state.customers.map(customer => (
+    <tr key={customer.id}>
+      <td>
+        <button
+          type="button"
+          onClick={() => this.getCustomer(customer)}
+          className="customer-link"
+        >
+          {customer.name}
+        </button>
+      </td>
+      <td>{customer.employees}</td>
+      <td>{customer.size}</td>
+    </tr>
+))}
                 </tbody>
               </table>
             </div>
