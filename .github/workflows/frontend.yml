@@ -46,7 +46,7 @@ jobs:
           script: |
             export PATH="/home/ubuntu/.nvm/versions/node/v24.21.0/bin:$PATH"
 
-            cd ~/FE
+            cd ~/FE-Practice
 
             git pull origin main
 
@@ -54,4 +54,4 @@ jobs:
 
             REACT_APP_API_URL="${{ secrets.REACT_APP_API_URL }}" npm run build
 
-            pm2 restart all
+            pm2 restart frontend
